@@ -1,5 +1,5 @@
 /*
-67. Add Binary
+67. Add Binary --- [varun]
 
 Given two binary strings, return their sum (also a binary string).
 
