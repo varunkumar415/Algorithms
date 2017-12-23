@@ -13,6 +13,19 @@ class ListNode{
 	
 }
 
+class TreeNode 
+ {
+      int val;
+      TreeNode left;
+      TreeNode right;
+      TreeNode(int x) 
+	  { 
+		val = x; 
+		left=null;
+		right=null;
+	  }
+}
+
 //main class
 public class Leetcode
 {
@@ -21,15 +34,47 @@ public class Leetcode
 //main method - driver function----------------------------------------------------------------
 public static void main(String[] args)
 {
-	int[] nums1 = {90,100,200,300};
-	int[] nums2 = {95,96,105,301,500};
-	int m = nums1.length;
-	int n = nums2.length;
-	merge(nums1, m, nums2, n); 
-	//90,90, 96, 100,105, 200, 300,301, 500
+	TreeNode p = new TreeNode(5);
+	p.left=  new TreeNode(10);
+	p.right=  new TreeNode(11);
+	
+	TreeNode q = new TreeNode(5);
+	q.left=  new TreeNode(10);
+	q.right=  new TreeNode(11);
+	
+	System.out.println(isSameTree(p,q));
+	
+	
 }// main
 //------------------------------------------------------------------------Main---------------------
-// merge two sorted array
+
+//-------------------------------------------------------------------------------------------------
+//100 same tree
+ public static boolean isSameTree(TreeNode p, TreeNode q) 
+{
+        
+	if(p==null && q==null)
+	{
+		return true;
+	}
+	else if(p==null || q==null)
+	{
+		return false;
+	}
+	
+	if(p.val==q.val)
+	{
+		return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+	}
+	
+	else 
+	{
+		return false;   
+	}     
+}
+
+//---------------------------------------------------------------------------------------------------
+//88 merge two sorted array
 
 public static void merge(int[] nums1, int m, int[] nums2, int n) 
 { 
