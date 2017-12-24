@@ -38,11 +38,32 @@ public static void main(String[] args)
 	p.right=  new TreeNode(11);
 	p.left.left=  new TreeNode(100);
 	
-	System.out.println(maxDepth(p));
+	System.out.println(printLevelOrderTree(p));
 		
 }// main
 //------------------------------------------------------------------------Main---------------------
-//
+//107. Binary Tree Level Order Traversal
+public static List<Integer> printLevelOrderTree(TreeNode root)
+{
+	Queue<TreeNode> q = new LinkedList<TreeNode>();
+	List<Integer> l = new ArrayList<Integer>();
+	
+	q.add(root);
+	while(!q.isEmpty())
+	{
+		TreeNode temp = q.poll(); //remove head of queue
+		l.add(temp.val); //add to list
+		
+		//add left and right node to the queue
+		if(temp.left!=null)
+			q.add(temp.left);
+		
+		if(temp.right!=null)
+			q.add(temp.right);		
+	}//while
+	return l;
+	
+}
 
 //-------------------------------------------------------------------------------------------------
 //104. Maximum Depth/height of Binary Tree
