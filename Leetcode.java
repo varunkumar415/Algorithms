@@ -29,27 +29,40 @@ class TreeNode
 //main class
 public class Leetcode
 {
-
 	
 //main method - driver function----------------------------------------------------------------
 public static void main(String[] args)
 {
 	TreeNode p = new TreeNode(5);
 	p.left=  new TreeNode(10);
-	p.right=  new TreeNode(10);
+	p.right=  new TreeNode(11);
 	p.left.left=  new TreeNode(100);
-	p.left.right=  new TreeNode(200);
-	p.right.left=  new TreeNode(200);
-	p.right.right=  new TreeNode(100);
-
-	System.out.println(isSymmetricTee(p));
 	
-	
+	System.out.println(maxDepth(p));
+		
 }// main
 //------------------------------------------------------------------------Main---------------------
+//
 
 //-------------------------------------------------------------------------------------------------
+//104. Maximum Depth/height of Binary Tree
+public static int maxDepth(TreeNode root)
+{
+	if(root==null)
+		return 0;
+	int lDepth = maxDepth(root.left);
+	int rDepth = maxDepth(root.right);
+	int max = Math.max(lDepth,rDepth);
+	 return max+1;
+	 
+}
+//-------------------------------------------------------------------------------------------------
 //101. Symmetric Tree - check all false condition
+//    1
+//   / \
+//  2   2
+// / \ / \
+//3  4 4  3
 public static boolean isSymmetricTee(TreeNode root)
 {
 	if(root==null)
