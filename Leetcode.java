@@ -36,19 +36,49 @@ public static void main(String[] args)
 {
 	TreeNode p = new TreeNode(5);
 	p.left=  new TreeNode(10);
-	p.right=  new TreeNode(11);
-	
-	TreeNode q = new TreeNode(5);
-	q.left=  new TreeNode(10);
-	q.right=  new TreeNode(11);
-	
-	System.out.println(isSameTree(p,q));
+	p.right=  new TreeNode(10);
+	p.left.left=  new TreeNode(100);
+	p.left.right=  new TreeNode(200);
+	p.right.left=  new TreeNode(200);
+	p.right.right=  new TreeNode(100);
+
+	System.out.println(isSymmetricTee(p));
 	
 	
 }// main
 //------------------------------------------------------------------------Main---------------------
 
 //-------------------------------------------------------------------------------------------------
+//101. Symmetric Tree - check all false condition
+public static boolean isSymmetricTee(TreeNode root)
+{
+	if(root==null)
+		return true;
+	return isSymmetric(root.left, root.right);
+}
+
+public static boolean isSymmetric(TreeNode l, TreeNode r)
+{
+	if(l==null && r==null)
+	{
+		return true;
+	}
+	else if (l==null || r==null)
+	{
+		return false;
+	}
+	if(l.val != r.val)
+	{
+		return false;
+	}
+	if(!isSymmetric(l.left, r.right))
+		return false;
+	if(!isSymmetric(l.right, r.left))
+		return false;
+	return true;
+}
+
+//--------------------------------------------------------------------------------------------------
 //100 same tree
  public static boolean isSameTree(TreeNode p, TreeNode q) 
 {
