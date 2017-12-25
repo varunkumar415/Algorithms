@@ -38,6 +38,22 @@ public static void main(String[] args)
 }// main
 //------------------------------------------------------------------------Main---------------------
 
+//111. Minimum Depth of Binary Tree
+public int minDepth(TreeNode root) 
+{
+	if(root == null)
+		return 0;
+	if(root.left==null && root.right==null)//leaf node check
+		return 1;
+	
+	int lDepth = root.left !=null ? minDepth(root.left) : Integer.MAX_VALUE;
+	int rDepth = root.right !=null ? minDepth(root.right) : Integer.MAX_VALUE;
+	
+	return (Math.min(lDepth, rDepth)+1);
+	
+}
+
+//-------------------------------------------------------------------------------------------------
 //110. Balanced Binary Tree
 public static boolean isBalancedTree(TreeNode root)
 {
