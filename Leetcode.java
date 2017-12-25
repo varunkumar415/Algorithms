@@ -33,15 +33,34 @@ public class Leetcode
 //main method - driver function----------------------------------------------------------------
 public static void main(String[] args)
 {
-	TreeNode p = new TreeNode(5);
-	p.left=  new TreeNode(10);
-	p.right=  new TreeNode(11);
-	p.left.left=  new TreeNode(100);
 	
-	System.out.println(printLevelOrderTree(p));
 		
 }// main
 //------------------------------------------------------------------------Main---------------------
+
+//108. Convert Sorted Array to Binary Search Tree
+public static TreeNode sortedArrayToBST(int[] nums)
+{
+	if(nums.length==0)
+	{
+		return null;
+	}
+	return sortedArrayToBST(nums, 0, nums.length-1);
+}
+
+public static TreeNode sortedArrayToBST(int[] nums, int s, int e)
+{
+	if(s<e)
+		return null;
+	int mid = (s+e)/2;
+	TreeNode root = new TreeNode(nums[mid]);
+	root.left = sortedArrayToBST(nums, s, mid-1);
+	root.right = sortedArrayToBST(nums, mid+1, e);
+	return root;
+}
+
+
+//---------------------------------------------------------------------------------------
 //107. Binary Tree Level Order Traversal
 public static List<Integer> printLevelOrderTree(TreeNode root)
 {
