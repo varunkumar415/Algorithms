@@ -38,6 +38,42 @@ public static void main(String[] args)
 }// main
 //------------------------------------------------------------------------Main---------------------
 
+//110. Balanced Binary Tree
+public static boolean isBalancedTree(TreeNode root)
+{
+	if(isBalanced(root)==-1)
+	{
+		return false;
+	}
+	
+	return true;
+}
+
+
+public static int isBalanced(TreeNode root) 
+{
+	if(root==null) //base condition step1
+		return 0;
+	
+	int lDepth = isBalanced(root.left); //step2
+	if(lDepth==-1)
+		return -1;
+	
+	int rDepth = isBalanced(root.right); //step3
+	if(rDepth==-1)
+		return -1;
+	
+	if(Math.abs(lDepth-rDepth)>1) //step 4
+	{
+		return -1;
+	}
+	
+	return (Math.max(lDepth,rDepth)+1); //step 5
+		
+	
+}
+
+
 //108. Convert Sorted Array to Binary Search Tree
 public static TreeNode sortedArrayToBST(int[] nums)
 {
