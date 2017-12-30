@@ -25,7 +25,7 @@ class TreeNode
 		right=null;
 	  }
 }
-
+Students who have earned degrees in certain science, technology, engineering and math (STEM) fields
 //main class
 public class Leetcode
 {
@@ -37,7 +37,14 @@ public static void main(String[] args)
 		
 }// main
 //------------------------------------------------------------------------Main---------------------
+//112. Path Sum
+public boolean hasPathSum(TreeNode root, int sum) 
+{
+	    
+}
 
+
+//-------------------------------------------------------------------------------------------------
 //111. Minimum Depth of Binary Tree
 public int minDepth(TreeNode root) 
 {
