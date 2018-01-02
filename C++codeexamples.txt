@@ -1,0 +1,57 @@
+//virtual destructor:
+
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+
+class A{
+    
+    int a;
+    public:
+        void f1()
+        {
+            cout<<"i am f1() :A\n";
+        }
+        
+        virtual void f2()
+        {
+            cout<<"i am f2(): A\n";
+        }
+        virtual ~A(){};
+        
+};
+
+class B : public A{
+    
+    int b;
+    public:
+        void f2()
+        {
+            cout<<"i am f2(): B\n";
+        }
+        
+        ~B(){};
+};
+
+int main()
+{
+    cout<<"main method\n";
+    A *ptr = new B();
+    ptr->f1(); //correct EB
+    ptr->f2(); //LB
+    delete ptr;
+    
+
+    return 0;
+}
+
+//-------------------------------------------------------------------------------------------------------------
