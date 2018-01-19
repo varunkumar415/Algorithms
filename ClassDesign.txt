@@ -1,0 +1,58 @@
+//Design a temperature class to display if a person has fever or not. 
+//Condition is different people have different body warmth and fever is detected if there is a variation of +/- 1 degree in temperature. 
+//Implement a function to detect if a person has fever.
+
+
+public class Temperature {
+    
+    public enum Location {
+    Mouth, Ear, Ampit
+    }
+    
+    private float temperature;
+    private Location location;
+
+    public Temperature(int temperature1, Location location1) {
+        this.temperature = temperature1;
+        this.location = location1;
+        
+       System.out.println("Temperature: "+temperature+" Location :"+location);
+    }
+
+    public Temperature(Location location) {
+        this.temperature = 0;
+        this.location = location;
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public double getTemperatureInFahrenheit() {
+        return ( temperature * (9/5.0) + 32 );
+    }
+    
+    public static void main(String[] args)
+    {
+        String str = "Mouth";
+        Temperature t = new Temperature(100,Location.valueOf(str));
+       // t.setTemperature(100);
+        System.out.println("Current Temperature: "+t.getTemperature());
+        System.out.println("Current Location: "+t.getLocation());
+        
+    }
+
+}//class
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------

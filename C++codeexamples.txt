@@ -55,3 +55,59 @@ int main()
 }
 
 //-------------------------------------------------------------------------------------------------------------
+
+
+//**Operator Overloading
+
+#include <iostream>
+
+using namespace std;
+
+class Complex
+{
+	private:
+		int a,b;
+		public:
+			void setData(int x,int y)
+			{
+				a=x;
+				b=y;
+			}
+			void showData()
+			{
+				cout<<"\na:"<<a<<" b:"<<b;
+				
+			}
+			Complex operator +(Complex c)
+			{
+				Complex temp;
+				temp.a = a+c.a;
+				temp.b = b+c.b;
+				return temp;
+			}
+			
+			Complex operator -()
+			{
+				Complex temp;
+				temp.a = -a;
+				temp.b = -b;
+				return temp;
+			}
+};//class
+
+int main()
+{
+//	clrscr();
+	Complex c1,c2,c3,c4;
+	c1.setData(3,4);
+	c2.setData(2,5);
+	c3=c1+c2; // operator oveloading : binary operator
+	c3.showData();
+	
+	c4=-c1; //unary operator
+	c4.showData();
+	
+	return 0;
+}
+
+//--------------------------------------------------------------------------------------------
