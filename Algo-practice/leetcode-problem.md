@@ -138,5 +138,25 @@ public int maxProduct(int[] nums) {
       return res;   
 }
 ```
+```ruby
+# @param {Integer[]} nums
+# @return {Integer}
+def max_product(nums)
+  curr_max=nums[0]
+  curr_min=nums[0]
+  prev_max=nums[0]
+  prev_min=nums[0]
+  res=nums[0]
+  nums[1..-1].each do |a|
+    curr_max = [prev_max*a, prev_min*a, a].max
+    puts curr_max
+    curr_min = [prev_max*a, prev_min*a, a].min
+    res = [curr_max, res].max
+    prev_max=curr_max
+    prev_min=curr_min
+  end
+  return res
+end
+```
 
 ---
