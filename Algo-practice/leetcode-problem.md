@@ -45,7 +45,7 @@ public int[] twoSum(int[] nums, int target) {
       hm.put(nums[i],i);
     }
     return res; 
-  }
+}
 ```
 
 ```ruby
