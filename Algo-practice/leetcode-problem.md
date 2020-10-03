@@ -2,7 +2,9 @@
 
 
 - [1. Two Sum](#1-two-sum)
-
+- [2. Add Two Numbers](#2-add-two-numbers)
+- [152. Maximum Product Subarray](#152-maximum-product-subarray)
+- [53. Maximum Subarray](#53-maximum-subarray)
 
 
 ## 1. Two Sum
@@ -68,7 +70,7 @@ def two_sum(nums, target)
 end
 ```
 ---
-2. Add Two Numbers
+## 2. Add Two Numbers
 ```
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
@@ -109,7 +111,7 @@ public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 ```
 ---
 
-152. Maximum Product Subarray
+## 152. Maximum Product Subarray
 ```
 Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.
 
@@ -164,7 +166,7 @@ def max_product(nums)
 end
 ```
 ---
-53. Maximum Subarray
+## 53. Maximum Subarray
 ```
 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
