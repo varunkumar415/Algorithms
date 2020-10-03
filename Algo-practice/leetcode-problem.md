@@ -207,5 +207,18 @@ Constraints:
      return maxSum;
     }
 ```
+```ruby
+# @param {Integer[]} nums
+# @return {Integer}
+def max_sub_array(nums)
+  curr_max = nums[0]
+  max = nums[0]
+  nums[1..-1].each do |a|
+    curr_max = [curr_max+a, a].max
+    max = [curr_max, max].max
+  end
+  return max
+end
+```
 
 
