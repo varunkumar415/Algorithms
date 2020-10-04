@@ -129,12 +129,14 @@ public static void renameCustomer(Customer cust){
 ```
 ![image](./images/callbyvalue.png)
 
+# final keyword
 ```java
 final Customer c = new Custome("Edward"); // can't be chnage again
 
 final Customer c;
 c =  new Custome("Sam"); // fine
 c =  new Custome("James"); // compiler error
+c.setName("James"); //fine
 
 ```
 
