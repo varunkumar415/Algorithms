@@ -55,6 +55,54 @@ public static void printList(List<String> data){
 ```
 ![image](./images/heap.png)
 
+---
+
+# Process and Threads
+
+
+- Every Single process has minimum one thread
+- Thread can be created by extending Thread class or Runnable interface, Runnable interface is more preferrable.
+
+
+```java
+Class NewYear implements Runnable{
+  public void run() {
+    countDown();
+  }
+  
+  public void countDown() {
+    for(int i = 10; i>0; i--){
+      System.out.println(i);
+      try {
+        Thread.sleep(1000);
+      }
+      catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+    System.out.println("Happy New Year!");
+  }
+
+}
+
+public class Main {
+  public static void main(String[] args) {
+    NewYear ny = new NewYear();
+    Thread t = new Thread(ny);
+    t.start();
+  }
+
+}
+```
+
+
+
+
+
+
+
+
+
 
 
 
