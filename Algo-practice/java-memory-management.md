@@ -53,6 +53,7 @@ public static void printList(List<String> data){
   System.out.println(value);
 }
 ```
+![image](./images/heap.png)
 
 
 
