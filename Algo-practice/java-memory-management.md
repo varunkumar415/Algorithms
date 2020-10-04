@@ -1,7 +1,7 @@
 # Statck Memory in java
 
 - Stack memory in java is used for static memory allocation and execution of a thread
-- All local variables, threads, contants, reference variables, methods, reference of objects use stack memory
+- All local primitive variables, threads, contants, reference variables, methods, reference of objects use stack memory
 - stack is for short time
 - its automatically allocated and deallocated when method finishes execution
 - if this memory is full, java throws java.lang.StackOverFlowError
@@ -36,6 +36,25 @@ public class Main{
 - Access to this memory is relatively slower than stack memory
 - This memory isn't automatically deallocated. It needs Garbage collector to free up unused objects so as to keep the efficiency of memory usage
 - Heap isn't thread safe and needs to be guarded by properly synchronizing the code
+
+Ex.
+```java
+public static void main(String[] args){
+  List<String> myList = new ArrayList<String>();
+  myList.add("one");
+  myList.add("Two");
+  myList.add("Three");
+  printList(myList);
+}
+
+public static void printList(List<String> data){
+  String value = data.get(1);
+  data.add("Four");
+  System.out.println(value);
+}
+```
+
+
 
 
 
