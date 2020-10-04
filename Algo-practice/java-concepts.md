@@ -62,7 +62,7 @@ public static void printList(List<String> data){
 
 - Every Single process has minimum one thread
 - Thread can be created by extending Thread class or Runnable interface, Runnable interface is more preferrable.
-
+- 
 
 ```java
 Class NewYear implements Runnable{
@@ -94,6 +94,40 @@ public class Main {
 
 }
 ```
+
+# Passing by Value vs Reference
+
+- java does not allow passing variables by reference 
+- java allow only passing variables by value, which is copy of the variable
+- there is no ref keyword in java
+- java can do ref thing by wrapping into a class and return the instance of class
+- For objects passed into methods, the REFERENCE to the object is passed BY VALUE
+-
+
+```java
+public static void main(String[] args){
+  int localValue = 5;
+  calculate(localValue);
+  System.out.println(localValue); // it prints 5
+}
+
+public static void calculate(int calcValue){
+  calcValue = calcValue * 100;
+}
+
+---
+public static void main(String[] args){
+  Customer c = new Custome("Edward");
+  renameCustomer(c);
+  System.out.println(c.getName()); // it will print John
+}
+
+public static void renameCustomer(Customer cust){
+  cust.setName("John");
+}
+
+```
+![image](./images/callbyvalue.png)
 
 
 
