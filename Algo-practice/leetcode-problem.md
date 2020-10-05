@@ -5,6 +5,7 @@
 - [2. Add Two Numbers](#2-add-two-numbers)
 - [152. Maximum Product Subarray](#152-maximum-product-subarray)
 - [53. Maximum Subarray](#53-maximum-subarray)
+- [3. Longest Substring Without Repeating Characters](#3-longest-substring-without-repeating-characters)
 
 
 ## 1. Two Sum
@@ -228,5 +229,34 @@ def max_sub_array(nums)
 end
 ```
 ---
+
+## 3. Longest Substring Without Repeating Characters
+
+```java
+//Using HashSet and two pointer
+    public int lengthOfLongestSubstring(String s) {
+      int pointer_a = 0;
+      int pointer_b = 0;
+      int maxLen = 0;
+      int n = s.length();
+      
+      HashSet<Character> hs = new HashSet<>();
+      
+      while(pointer_b < n) {
+        if(!hs.contains(s.charAt(pointer_b))){
+          hs.add(s.charAt(pointer_b));
+          pointer_b++;
+          maxLen = Math.max(hs.size(), maxLen);
+          //System.out.println(maxLen);
+        }
+        else{
+          hs.remove(s.charAt(pointer_a));
+          pointer_a++;
+        }
+      }
+      return maxLen;  
+    }
+```
+
 
 
