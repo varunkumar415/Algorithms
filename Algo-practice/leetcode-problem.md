@@ -234,28 +234,28 @@ end
 
 ```java
 //Using HashSet and two pointer
-    public int lengthOfLongestSubstring(String s) {
-      int pointer_a = 0;
-      int pointer_b = 0;
-      int maxLen = 0;
-      int n = s.length();
-      
-      HashSet<Character> hs = new HashSet<>();
-      
-      while(pointer_b < n) {
-        if(!hs.contains(s.charAt(pointer_b))){
-          hs.add(s.charAt(pointer_b));
-          pointer_b++;
-          maxLen = Math.max(hs.size(), maxLen);
-          //System.out.println(maxLen);
-        }
-        else{
-          hs.remove(s.charAt(pointer_a));
-          pointer_a++;
-        }
-      }
-      return maxLen;  
+public int lengthOfLongestSubstring(String s) {
+  int pointer_a = 0;
+  int pointer_b = 0;
+  int maxLen = 0;
+  int n = s.length();
+
+  HashSet<Character> hs = new HashSet<>();
+
+  while(pointer_b < n) {
+    if(!hs.contains(s.charAt(pointer_b))){
+      hs.add(s.charAt(pointer_b));
+      pointer_b++;
+      maxLen = Math.max(hs.size(), maxLen);
+      //System.out.println(maxLen);
     }
+    else{
+      hs.remove(s.charAt(pointer_a));
+      pointer_a++;
+    }
+  }
+  return maxLen;  
+}
 ```
 
 
