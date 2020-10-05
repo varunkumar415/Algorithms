@@ -291,5 +291,29 @@ public int lengthOfLongestSubstring(String s) {
 }
 ```
 
+```ruby
+# @param {String} s
+# @return {Integer}
+def length_of_longest_substring(s)
+  pointer_a = 0
+  pointer_b = 0
+  max = 0
+  set = Set.new
+  n = s.length
+ 
+  while pointer_b < n do
+    if !set.include?(s[pointer_b]) 
+      set.add(s[pointer_b])
+      pointer_b = pointer_b+1
+      max = [set.size, max].max
+    else
+      set.delete(s[pointer_a])
+      pointer_a = pointer_a+1
+    end   
+  end
+  return max
+end
+```
+
 
 
