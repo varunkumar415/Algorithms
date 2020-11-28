@@ -6,6 +6,7 @@
 - [152. Maximum Product Subarray](#152-maximum-product-subarray)
 - [53. Maximum Subarray](#53-maximum-subarray)
 - [3. Longest Substring Without Repeating Characters](#3-longest-substring-without-repeating-characters)
+- [724. Find Pivot Index](#724-find-pivot-index)
 
 
 ## 1. Two Sum
@@ -313,6 +314,92 @@ def length_of_longest_substring(s)
   end
   return max
 end
+```
+
+## 724. Find Pivot Index
+
+```java
+public int pivotIndex(int[] nums) {
+      if(nums==null){
+        return -1;
+      }
+      int nums_sum = 0;
+      for(int num:nums){
+        nums_sum += num;
+      }
+      
+      int leftSum = 0;
+      for(int i=0; i<nums.length; i++){
+        if(leftSum == nums_sum - leftSum - nums[i]){
+          return i;
+        }
+        leftSum += nums[i];
+      }
+      
+      return -1;  
+    }
+```
+
+## 242. Valid Anagram
+
+```java
+public boolean isAnagram(String s, String t) {
+      if(s.length()!=t.length()){
+          return false;
+      }
+      HashMap<Character, Integer> hm = new HashMap<>();
+      
+      for(int i=0;i<s.length();i++){
+        char ch = s.charAt(i);
+        if(hm.containsKey(ch)){
+          hm.put(ch, hm.get(ch)+1);
+        }
+        else{
+          hm.put(ch,1);
+        }
+      }
+      
+      for(int i=0;i<t.length();i++){
+        char ch = t.charAt(i);
+        if(hm.containsKey(ch)){
+          if(hm.get(ch)==1){
+            hm.remove(ch);
+          }
+          else{
+            hm.put(ch, hm.get(ch)-1);
+          }
+        }
+        else{
+          return false;
+        }
+      }
+      
+      if(hm.size()==0){
+        return true;
+      }
+      return false;
+        
+    }
+```
+
+```java
+public boolean isAnagram(String s, String t) {
+        if(s.length()!=t.length()){
+            return false;
+        }
+        
+        int[] charCount = new int[256];
+        for(int i=0;i<s.length();i++){
+            charCount[s.charAt(i)]++;
+            charCount[t.charAt(i)]--;
+        }
+        for(int i: charCount){
+            if(i!=0){
+                return false;
+            }
+        }
+        return true; 
+    }
 ```
 
 
