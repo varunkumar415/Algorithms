@@ -7,6 +7,7 @@
 - [53. Maximum Subarray](#53-maximum-subarray)
 - [3. Longest Substring Without Repeating Characters](#3-longest-substring-without-repeating-characters)
 - [724. Find Pivot Index](#724-find-pivot-index)
+- [242. Valid Anagram](#242-valid-anagram)
 
 
 ## 1. Two Sum
@@ -318,6 +319,35 @@ end
 
 ## 724. Find Pivot Index
 
+```
+Given an array of integers nums, write a method that returns the "pivot" index of this array.
+
+We define the pivot index as the index where the sum of all the numbers to the left of the index is equal to the sum of all the numbers to the right of the index.
+
+If no such index exists, we should return -1. If there are multiple pivot indexes, you should return the left-most pivot index.
+
+ 
+
+Example 1:
+
+Input: nums = [1,7,3,6,5,6]
+Output: 3
+Explanation:
+The sum of the numbers to the left of index 3 (nums[3] = 6) is equal to the sum of numbers to the right of index 3.
+Also, 3 is the first index where this occurs.
+Example 2:
+
+Input: nums = [1,2,3]
+Output: -1
+Explanation:
+There is no index that satisfies the conditions in the problem statement.
+ 
+
+Constraints:
+
+The length of nums will be in the range [0, 10000].
+Each element nums[i] will be an integer in the range [-1000, 1000].
+```
 ```java
 public int pivotIndex(int[] nums) {
       if(nums==null){
@@ -341,6 +371,24 @@ public int pivotIndex(int[] nums) {
 ```
 
 ## 242. Valid Anagram
+
+```
+Given two strings s and t , write a function to determine if t is an anagram of s.
+
+Example 1:
+
+Input: s = "anagram", t = "nagaram"
+Output: true
+Example 2:
+
+Input: s = "rat", t = "car"
+Output: false
+Note:
+You may assume the string contains only lowercase alphabets.
+
+Follow up:
+What if the inputs contain unicode characters? How would you adapt your solution to such case?
+```
 
 ```java
 public boolean isAnagram(String s, String t) {
