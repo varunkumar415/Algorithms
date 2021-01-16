@@ -21,3 +21,9 @@
 - Good if solution is away from source
 - DFS spanning tree
 - dotted lines are back edges
+
+
+- Graph example:
+
+![graph-bfs-dfs](./images/graph-bfs-dfs.png)
+
