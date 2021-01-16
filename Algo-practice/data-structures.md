@@ -56,7 +56,26 @@ Graph(int v){
   }
   
   void BFS(int start){
+    boolean visited[] = new boolean[nun_vertex];
+    LinkedList<Integer> queue = new LinkedList<Integer>();
+    visisted[start]=true;
+    queue.add(start);
     
+    while(queue.size()!=0){
+      int data = queue.poll();
+      System.out.println(data);
+      
+      Iterator<Integer> it = adjacencyList[data].listIterator();
+      while(it.hasNext()){
+        int n = it.next();
+        if(visited[n]==false){
+          visited[n]=true;
+          qeueue.add[n];
+        }
+      
+      }
+    
+    }
   
   }
   
